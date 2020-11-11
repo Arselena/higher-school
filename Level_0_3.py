@@ -53,6 +53,7 @@ def ConquestCampaign(N, M, L, battalion):
         # Захват территории Государства Квадратов
         Flag = False
         Dey = 1
+        Sqares, Flag = ItogZahvat(Sqares)
         while Flag == False:
             for X in range(N):
                 for Y in range(M):
