@@ -7,15 +7,18 @@ def WordSearch(len1, s, subs):
 
         def STROne(S, begin, end):  # Формирование одной строки  
             strWord = []
-            for i in range(end, begin-1, -1):
-                tmp = S[i]
-                if S[i] == ' ':
-                    end = i
-                    strOne = "".join(S[begin:(end+1)])
-                    #strOne = S[begin:(end+1)]
-                    break
-                elif i == begin:
-                    strOne = "".join(S[begin:(end+1)])
+            if (end + 1) < len(S) and S[end + 1] != ' ':
+                for i in range(end, begin-1, -1):
+                    tmp = S[i]
+                    if S[i] == ' ':
+                        end = i
+                        strOne = "".join(S[begin:(end+1)])
+                        #strOne = S[begin:(end+1)]
+                        break
+                    elif i == begin:
+                        strOne = "".join(S[begin:(end+1)])
+            else:
+                strOne = "".join(S[begin:(end+1)])
             return strOne, end
 
         def arrWords(len1, S):  # Формирование массива из строк заданной ширины
@@ -36,6 +39,7 @@ def WordSearch(len1, s, subs):
                 
                 S1, end = STROne(SS, begin, end)
                 strWords.append(S1)
+                print(strWords)
             return(strWords)
 
     #    def findWord(S, subs):
@@ -57,4 +61,5 @@ def WordSearch(len1, s, subs):
     except AssertionError:
         pass
 
-print(WordSearch(10, '12345', 'subs'))
+#print(WordSearch(10, '12345', 'subs'))
+print(WordSearch(9, '1) stroka razbivaetsya na nabor strok...', 'strok'))
