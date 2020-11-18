@@ -1,6 +1,6 @@
 def WordSearch(len1, s, subs):
     try:
-        assert type(len1) is int and 0 < len1 <= len(s)  # Проверяем число N (целое, положительное)
+        assert type(len1) is int and len1 > 0  # Проверяем число N (целое, положительное)
         assert type(s) is str and len(s) > 0   # Проверяем строку s
         assert type(subs) is str and 0 < len(subs) <= len(s)   # Проверяем слово subs
         assert "  " not in s  # Проверяем, что в строке не более 1 пробела
@@ -42,6 +42,8 @@ def WordSearch(len1, s, subs):
 
         if len1 == 1:
             S = s
+        elif len1 >= len(s):
+            S = [s]
         else:
             S = arrWords(len1, s)
         strRez = []
@@ -54,3 +56,5 @@ def WordSearch(len1, s, subs):
         return(strRez)
     except AssertionError:
         pass
+
+print(WordSearch(10, '12345', 'subs'))
