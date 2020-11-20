@@ -5,12 +5,13 @@ def SumOfThe(N, data):
             assert type(data[i]) is int  # Проверяем Элемент массива 
 
         DATA = list(data)
+        SUM = None
         for i in range(1, N):
-            if DATA[0] == sum(DATA[1:(len(DATA))]):
+            if DATA[0] == sum(DATA[1:N]):
                 SUM = DATA[0]
                 break
-            elif i == N-1:
-                SUM = None
+            elif DATA[N-1] == sum(DATA[0:(N-1)]):
+                SUM = DATA[N-1]
             else: 
                 DATA[0], DATA[i] = DATA[i], DATA[0]
         return SUM
@@ -18,4 +19,4 @@ def SumOfThe(N, data):
     except AssertionError:
         pass
 
-print(SumOfThe(7, (100, -50, 10, -25, 90, -35, 90)))
+print(SumOfThe(7, [100, -50, 10, -25, 90, -35, 90]))
