@@ -73,7 +73,7 @@ def TheRabbitsFoot(s, encode):
                 if arrTrans[i][j-1] != ' ':
                     arrTrans[i].append(' ')
                 shifr += arrTrans[i]
-            SHIFR = " ".join(shifr)
+            SHIFR = "".join(shifr)
             return SHIFR
 
         def deCoder(s):
@@ -82,7 +82,7 @@ def TheRabbitsFoot(s, encode):
             shifr = []
             for i in range(len(arrTrans)): 
                 shifr += arrTrans[i]
-            SHIFR = " ".join(shifr)
+            SHIFR = delWS("".join(shifr))
             return SHIFR
 
         if encode == True:
