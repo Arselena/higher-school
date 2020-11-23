@@ -72,6 +72,8 @@ def TheRabbitsFoot(s, encode):
                 j = len(arrTrans[i])
                 if arrTrans[i][j-1] != ' ':
                     arrTrans[i].append(' ')
+                if i == (len(arrTrans) - 1) and arrTrans[i][j-1] == ' ':
+                    del arrTrans[i][j-1]
                 shifr += arrTrans[i]
             SHIFR = "".join(shifr)
             return SHIFR
@@ -93,3 +95,6 @@ def TheRabbitsFoot(s, encode):
     
     except AssertionError:
         pass
+
+print(TheRabbitsFoot('отдай мою кроличью лапку', True))
+print(TheRabbitsFoot('омоюу толл дюиа акчп йрьк', False))
