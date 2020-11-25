@@ -1,11 +1,13 @@
+import os
 from openpyxl import Workbook, load_workbook
 
 def PrintingCosts(Line):
     try:
         assert type(Line) is str
 
-        ARR = list(Line)    
-        WB = load_workbook(filename = r'.\higher-school\Lib\ConsTon.xlsx')  # Открываем книгу
+        ARR = list(Line)
+        paht = os.path.dirname(os.path.abspath(__file__)) + '\Lib\ConsTon.xlsx'  # Получить директорию, где расположен скрипт + каталог с файлом xls
+        WB = load_workbook(filename = paht)  # Открываем книгу
         SH = WB.active  # Переменная sheet = активному листу в книге wb 
         
         row_max = SH.max_row  # Получаем количество столбцов 
