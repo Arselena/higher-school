@@ -23,7 +23,7 @@ def MassVote(N, Votes):
         for i in range(len(Votes)):
             if j != i and Votes[i] == Votes[j]:
                 rez = 'no winner'
-                return res
+                return rez
         
         if Votes[j] * 100 / sum(Votes) >= 50:
             rez = 'majority winner ' + str(j + 1)
@@ -34,5 +34,3 @@ def MassVote(N, Votes):
     
     except AssertionError:
         pass
-
-print(MassVote(3, [5, 5, 6]))
