@@ -25,7 +25,7 @@ def MassVote(N, Votes):
                 rez = 'no winner'
                 return rez
         
-        if Votes[j] * 100 / sum(Votes) >= 50:
+        if Votes[j] * 100 / sum(Votes) > 50:
             rez = 'majority winner ' + str(j + 1)
         else:
             rez = 'minority winner ' + str(j + 1)
