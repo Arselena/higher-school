@@ -1,11 +1,14 @@
 def LineAnalysis(line:str):
-    if line == '' or line == '*' or line == '**' or line == '*.*' or line == '***':
+    if len(line) % 2 == 0:
+        n1 = n2 = len(line) // 2
+    else:
+        n1 = len(line) // 2
+        n2 = len(line) // 2 + 1
+
+    line1 = line[:n1]
+    line2 = line[n2:]
+    line2 = line2[::-1]
+    if line1 == line2:
         return True
-    
-    N = len(line)
-    s = line[1:N-1].split('*') # Убираем крайние звездочки и разделяем на подстроки по '*'
-    for i in range(len(s)-1):
-        if s[i] == s[i+1]:
-            flag = True
-        else: flag = False
-    return flag
+    else: 
+        return False
