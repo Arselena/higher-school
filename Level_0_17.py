@@ -1,5 +1,4 @@
 def LineAnalysis(line:str):
-    a = ''
     if line == '' or line == '*' or line == '**' or line == '*.*' or line == '***':
         return True
     
@@ -10,6 +9,3 @@ def LineAnalysis(line:str):
             flag = True
         else: flag = False
     return flag
-
-# print(LineAnalysis('*..*..*..*..*..*..*'))
-print(LineAnalysis('**..**..**..***'))
