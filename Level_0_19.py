@@ -2,11 +2,13 @@ def ShopOLAP(N:int, items:str):
 
     def sum(s_new):  # Складывает одинаковые позиции 
         i = 0
-        while i in range(len(s_new) - 1):  
+        while i in range(len(s_new) - 1):
             while s_new[i][0] == s_new[i+1][0]: 
                 a = int(s_new[i][1]) + int(s_new[i + 1][1])
                 s_new[i][1] = str(a)
                 del s_new[i + 1]
+                if i == len(s_new) - 1:
+                    return s_new
             i += 1
         return s_new
 
