@@ -12,7 +12,7 @@ def BastShoe(command:str):
             list_redo = []
         S_current += command[2:]
         list_chang.append(S_current)
-        be_chang == False
+        be_chang = False  # Исправлено == на =
 
     elif command[0] == "2":  # Удалить n = int(command[2:]) символов
         if be_chang == True:  # Обнуляем список изменений и список отмены изменений
@@ -24,7 +24,7 @@ def BastShoe(command:str):
         else: 
             S_current = ""
         list_chang.append(S_current)
-        be_chang == False
+        be_chang = False  # Исправлено == на =
 
     elif command[0] == "3":  # Выдать i-й символ текущей строки
         i = int(command[2:])
