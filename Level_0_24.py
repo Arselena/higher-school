@@ -9,8 +9,6 @@ def MatrixTurn(Matrix:str, M:int, N:int, T:int):
                 S[i][j1] = Et[i+1][j1]  # Поворот левого края
                 S[i+1][j2] = Et[i][j2]  # Поворот правого края
             rotate(S, i1+1, i2-1, j1+1, j2-1, Et)  # Сужаем кольцо матрицы и снова поворачиваем
-        # else:  Думяю, это лишние строки
-            # return S
         return S
 
     if T >= 1:
@@ -24,4 +22,4 @@ def MatrixTurn(Matrix:str, M:int, N:int, T:int):
             for j in range(len(Matrix[i])):
                 Matrix[i] = ''.join(Matrix[i])
         
-        Matrix = MatrixTurn(S, M, N, T)
+        Matrix = MatrixTurn(Matrix, M, N, T)
