@@ -27,5 +27,3 @@ def MatrixTurn(Matrix:str, M:int, N:int, T:int):
     for i in range(len(Matrix)):
         for j in range(len(Matrix[i])):
             Matrix[i] = ''.join(Matrix[i])
-    
-    return Matrix
