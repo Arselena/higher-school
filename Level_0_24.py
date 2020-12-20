@@ -27,7 +27,3 @@ def MatrixTurn(Matrix:str, M:int, N:int, T:int):
     T -= 1
     if T >= 1:
         MatrixTurn(Matrix, M, N, T)
-    else:
-        print(Matrix)
-
-print(MatrixTurn(["111111", "222222", "333333", "444444"], 4,6, 16))
