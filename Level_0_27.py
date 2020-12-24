@@ -1,11 +1,11 @@
 def Football(F, N:int):
-    
+    F = list(F)
     F_sort = sorted(F)
     F_rev = reversed(F)    
     index = []
 
     if F == F_sort:  # Если массив изначально отсортирован
-        return True
+        return False
     
     for i in range(len(F)):  # Запишем индексы значений не на своих местах
         if F[i] != F_sort[i]:
